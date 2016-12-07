@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="312dip"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <LinearLayout
+        android:id="@+id/details_popview_layout"
+        android:layout_width="312dip"
+        android:layout_height="390dip"
+        android:background="@drawable/red_packet_background_ready"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:id="@+id/gift_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:singleLine="true"
+            android:layout_marginTop="152dip"
+            android:textColor="#fefefe"
+            android:text="我是标题"
+            android:textSize="20sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="101dp"
+            android:layout_marginTop="14.33dip"
+            android:requiresFadingEdge="vertical"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="20dp"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/gift_details_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dip"
+                    android:textColor="#ffffff"
+                    android:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/remain_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#ffffff"
+                    android:text="到期时间：2016年12月8日00:14:30"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/gift_tips_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11.67dip"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="4dip"
+                    android:maxLines="2"
+                    android:text="使用方法： 内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+                    android:textColor="#ebb66b"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/gift_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dip"
+                    android:text="优惠码： axc2b"
+                    android:textColor="#ebb66b"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/gift_btn"
+            android:layout_width="240dip"
+            android:layout_height="38dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="13.67dip"
+            android:textColor="#d5403a"
+            android:text="抢红包"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/details_popview_layout_flip"
+        android:layout_width="312dip"
+        android:layout_height="390dip"
+        android:background="@drawable/red_packet_background_ready"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:id="@+id/gift_title_flip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:singleLine="true"
+            android:layout_marginTop="152dip"
+            android:textColor="#fefefe"
+            android:text="我是标题"
+            android:textSize="20sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="101dp"
+            android:layout_marginTop="14.33dip"
+            android:requiresFadingEdge="vertical"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="20dp"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/gift_details_text_flip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dip"
+                    android:textColor="#ffffff"
+                    android:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/remain_time_flip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#ffffff"
+                    android:text="到期时间：2016年12月8日00:14:30"
+                    android:textSize="12sp"  />
+
+                <TextView
+                    android:id="@+id/gift_tips_text_flip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11.67dip"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="4dip"
+                    android:maxLines="2"
+                    android:text="使用方法： 内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+                    android:textColor="#ebb66b"
+                    android:textSize="12sp"  />
+
+                <TextView
+                    android:id="@+id/gift_code_flip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dip"
+                    android:text="优惠码： axc2b"
+                    android:textColor="#ebb66b"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/gift_btn_flip"
+            android:layout_width="240dip"
+            android:layout_height="38dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="13.67dip"
+            android:textColor="#d5403a"
+            android:text="抢红包"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/details_popview_close_img"
+        android:layout_width="34dip"
+        android:layout_height="34dip"
+        android:layout_below="@+id/details_popview_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dip"
+        android:src="@drawable/red_packet_bottom_close" />
+</RelativeLayout>
