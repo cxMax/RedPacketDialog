@@ -1,11 +1,15 @@
 package com.cxmax.library;
 
 import android.content.Context;
+import android.support.annotation.IntDef;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
 /**
  * @Author CaiXi on  2016/12/8 00:33.
  * @Github: https://github.com/cxMax
- * @Description
+ * @Description DilaogBean-dialog当前状态，dialog业务接口方法
  */
 
 public class DialogHelper {
@@ -23,12 +27,34 @@ public class DialogHelper {
         return new DialogHelper(context);
     }
 
-    public DialogController held(){
+    public DialogController begin() {
         return new DialogController(mContext);
     }
 
-    public interface Result{
-        void showDilaog();
+    public interface Result {
+        void showDilaog(DilaogBean bean);
         void hideDialog();
+    }
+
+    public static class DilaogBean {
+        static final int STATUS_READY = 0;
+        static final int STATUS_ROTATE = 1;
+
+        @DilaogStatus
+        private int status = STATUS_READY;
+
+        @Retention(RetentionPolicy.SOURCE)
+        @IntDef(value = {STATUS_READY, STATUS_ROTATE})
+        @interface DilaogStatus {
+        }
+
+        public DilaogBean status(int state) {
+            this.status = state;
+            return this;
+        }
+
+        public int getStatus() {
+            return status;
+        }
     }
 }

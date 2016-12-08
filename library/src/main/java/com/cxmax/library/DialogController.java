@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
+import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -15,10 +16,10 @@ import android.widget.TextView;
 /**
  * @Author CaiXi on  2016/12/8 00:45.
  * @Github: https://github.com/cxMax
- * @Description
+ * @Description dialog具体实现和业务实现
  */
 
-public class DialogController implements DialogHelper.Result , View.OnClickListener {
+public class DialogController implements DialogHelper.Result, View.OnClickListener {
 
     private Context mContext;
 
@@ -42,10 +43,11 @@ public class DialogController implements DialogHelper.Result , View.OnClickListe
     private Button mBtnFlip;
     private TextView mTipsFlip;
 
+    private AnimatorUtil mAnimatorUtil = new AnimatorUtil();
 
     public DialogController(Context context) {
         this.mContext = context;
-        if (mPopupWindow == null){
+        if (mPopupWindow == null) {
             initPopupWindow();
         }
     }
@@ -100,21 +102,55 @@ public class DialogController implements DialogHelper.Result , View.OnClickListe
     }
 
     @Override
-    public void showDilaog() {
-
+    public void showDilaog(DialogHelper.DilaogBean bean) {
+        showPop(bean);
+        flipCardShow();
     }
 
     @Override
     public void hideDialog() {
-
+        if (mPopupWindow != null && mPopupWindow.isShowing()) {
+            mPopupWindow.dismiss();
+        }
     }
 
     @Override
     public void onClick(View v) {
-        if (v == mBtn || v == mBtnFlip){
+        if (v == mBtn || v == mBtnFlip) {
+            flipCardChange();
+        } else if (v == mCloseImg) {
 
-        } else if (v == mCloseImg){
+        }
+    }
 
+    private void showPop(DialogHelper.DilaogBean bean) {
+        if (mPopupWindow != null && !mPopupWindow.isShowing()) {
+            mPopupWindow.showAtLocation(mPopView, Gravity.CENTER, 0, 0);
+        }
+        if (!((Activity) mContext).isDestroyed()
+                && bean != null
+                && bean.getStatus() == DialogHelper.DilaogBean.STATUS_ROTATE
+                && mContainerFlip != null
+                && mAnimatorUtil != null) {
+            mContainerFlip.setVisibility(View.VISIBLE);
+            mAnimatorUtil.cardChange(mContainerFlip, (Activity) mContext);
+        }
+    }
+
+    private void flipCardShow() {
+        if (!((Activity) mContext).isDestroyed()
+                && mContainerFlip != null
+                && mAnimatorUtil != null) {
+            mContainer.setRotationY(0);
+            mAnimatorUtil.cardChange(mContainer, (Activity) mContext);
+        }
+    }
+
+    private void flipCardChange() {
+        if (!((Activity) mContext).isDestroyed()
+                && mContainerFlip != null
+                && mAnimatorUtil != null) {
+            mAnimatorUtil.flipChange(mContainerFlip, mContainer);
         }
     }
 }
